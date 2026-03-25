@@ -1,5 +1,11 @@
 ## ChiPFormer: Transferable Chip Placement via Offline Decision Transformer
 
+**PROJECT STATUS (Updated 2026):**
+- ✅ Environment setup for Python 3.11.9 / PyTorch 2.5.1
+- ✅ Fixed numpy & benchmark compatibility issues
+- ✅ Verified placement on `adaptec1` (63 macros)
+- ✅ Inference metrics: HPWL 930k, Steiner Cost 1.01M, Score 0.99
+
 ChiPFormer is an offline RL-based placement method that significantly improves design quality and efficiency.
 
 ### Publication
