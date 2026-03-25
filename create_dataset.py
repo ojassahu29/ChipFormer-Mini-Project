@@ -206,7 +206,7 @@ def create_dataset(num_buffers=0, num_steps=0, game=0,
         i = int(i)
         curr_traj_returns = stepwise_returns[start_index:i]
         raw_curr_traj_returns = stepwise_raw_returns[start_index:i]
-        rtg_raw_statistics[levels[start_index, 0]].append(int(sum(raw_curr_traj_returns)))
+        rtg_raw_statistics[levels[start_index, 0]].append(int(raw_curr_traj_returns.sum()))
         for j in range(i-1, start_index-1, -1): # start from i-1
             rtg_j = curr_traj_returns[j-start_index:i-start_index]
             rtg[j] = sum(rtg_j)
