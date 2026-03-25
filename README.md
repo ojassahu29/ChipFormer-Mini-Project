@@ -36,26 +36,23 @@ tar -zxvf adaptec1_small.pkl.tar.gz
 Our test set includes the ISPD05 and ICCAD04 benchmarks. We include *adaptec1* for a quick start.
 All benchmarks can also be downloaded from *placement_bench.zip* in [Google Drive](https://drive.google.com/drive/folders/1F7075SvjccYk97i2UWhahN_9krBvDCmr).
 
-#### Quick start
+#### Quick start (Inference)
 
-ChiPFormer consists of two stages: pretraining and fine-tuning.
-
-- For pretraining:
+To run a single placement on the `adaptec1` benchmark (63 macros) and see the coordinates:
 
 ```bash
-python run_dt_place.py
+python run_inference.py
 ```
 
-You can change the training dataset file/path in *create_dataset.py*.
-Saved models will be in *save_models/*.
+This will produce:
+- A printed table of 63 macro coordinates.
+- Final HPWL (wirelength) and Steiner Tree cost.
+- A summary of results.
 
-- For fine-tuning:
-
+For bulk evaluation (10 rollouts):
 ```bash
-python odt.py --benchmark=adaptec1
+python run_dt_place.py --is_eval_only --cuda 0 --context_length 256 --epochs 1 --batch_size 1
 ```
-
-The model checkpoint path for fine-tuning can be set in *odt.py*. Typically, you fine-tune using the best checkpoint from pretraining.
 
 #### VGAE-based circuit feature extraction
 
