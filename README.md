@@ -7,18 +7,15 @@ Yao Lai, Jinxin Liu, Zhentao Tang, Bin Wang, Jianye Hao, Ping Luo. "ChiPFormer: 
 
 [paper](https://arxiv.org/pdf/2306.14744.pdf) | [dataset](https://drive.google.com/drive/folders/1F7075SvjccYk97i2UWhahN_9krBvDCmr) | [website](https://sites.google.com/view/chipformer/home) | [video(English)](https://www.youtube.com/watch?v=9-EQmDjRLHQ) | [video(Mandarin)](https://www.bilibili.com/video/BV1ym4y177CC/)
 
-### Environment Setup (Updated in 2026)
+### Environment Setup (Updated 2026)
 
-This repo was developed with older versions of PyTorch and Python, so we recommend using the following environment:
+This repository has been tested with Python 3.11.9 and PyTorch 2.5.1+cu121.
 
 ```bash
-git clone https://github.com/laiyao1/ChiPFormer.git
-conda create -n chipformer python=3.9 -y
-conda activate chipformer
-conda install pytorch=1.10.1 torchvision torchaudio cudatoolkit=11.3 -c pytorch -y
-conda install dgl-cuda11.3=0.7.2 -c dglteam -y
-pip install networkx==2.6.3 scipy==1.7.3
-pip install tqdm
+# Core dependencies
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install dgl -f https://data.dgl.ai/wheels/torch-2.5/cu121/repo.html
+pip install networkx==2.6.3 scipy tqdm
 ```
 
 ### Usage
