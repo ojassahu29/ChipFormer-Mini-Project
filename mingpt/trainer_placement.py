@@ -227,6 +227,8 @@ class Trainer:
             T_scores_y_all_err_1 = []
             T_scores_x_all_1 = []
             for i, benchmark in enumerate(benchmark_list):
+                if benchmark not in placedb_g_lib:
+                    continue
                 eval_return[benchmark] = {}
                 T_scores_x = []
                 T_scores_y = []
